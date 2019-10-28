@@ -1,0 +1,8 @@
+
+IOTHub/db.sqlite3
+IOTHub/IOTHub/settings.py
+*.pyc
+*.json
+*.lock
+IOTHub/static/*
+*/static/*

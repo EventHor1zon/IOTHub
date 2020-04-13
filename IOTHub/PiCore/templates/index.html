@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <title>
+        "Welcome to PiCore"
+    </title>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="banner">
+            <h3> Hello, there! </h3>
+        </div>
+        <div id="topbar">
+            <div id="logo">
+                <img src="PiImage.png" alt="">
+            </div>
+            <div id="links"><a href="#"> Home </a></div>
+            <div id="links">
+                <button id="dropbtn"> Devices </button>
+                <div id="dropdown-content">
+                    {% for dev in devices %}
+                        <a href="{% url 'device' device.id %}">
+                            {{ device.device_name }}
+                        </a>
+                    {% endfor %}
+            </div>
+            <div id="links"><a href="#"> Status </a></div>
+            <div id="links"><a href="#"> Actions </a></div>
+            <div id="links"></div>
+        </div>
+
+        <div id="main">
+
+            <div id="leftbar"> leftbar </div>
+
+            <div id="center">
+                <h2>Home</h2>
+                <p> Welcome ot PiCore Home </p>
+            </div>
+            <div id="devices">
+                <strong> DEVICES </strong> {% if views.devices %} {% for device in devices %}
+                <div id="device">
+                    <img src="{{ device.picture }}" alt="" style="align-content: flex-start">
+                </div>
+                {% endfor %} {% endif %}
+            </div>
+            <div> left bottom </div>
+            <div id="lower-center"> Select actions </div>
+            <div id="lower-right"> hi </div>
+        </div>
+
+        <div id="bottom">
+
+        </div>
+    </div>
+</body>

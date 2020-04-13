@@ -1,4 +1,4 @@
-"""IOTHub URL Configuration
+"""PiCore URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path("/", include('PiCore.urls')),
-    path('admin/', admin.site.urls),
+    path('/', views.IndexView.as_view()),
+    path('/device/<int:id>/', views.DeviceView.as_view()),
+    path('/led_ctrl/', views.LEDView.as_view()),
 ]

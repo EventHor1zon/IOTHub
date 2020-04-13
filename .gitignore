@@ -6,3 +6,5 @@ IOTHub/IOTHub/settings.py
 *.lock
 IOTHub/static/*
 */static/*
+IOTHub/manage.py
+IOTHub/PiCore/migrations/
